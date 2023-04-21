@@ -12,3 +12,5 @@ Preview the generated exam on the screen
 Download the generated exam as a .docx file
 
 Note: This app requires an API Key from OpenAI for GPT-4. Please make sure you have a valid API key before running the app.
+
+![image](https://user-images.githubusercontent.com/50301869/233710425-4a6f6ffc-eb65-47e7-b631-aa08e313b16f.png)
