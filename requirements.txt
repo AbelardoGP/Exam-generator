@@ -3,5 +3,4 @@ openai
 chardet
 PyPDF2
 python-docx
-os
 base64
