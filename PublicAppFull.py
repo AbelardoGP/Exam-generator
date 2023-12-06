@@ -46,17 +46,6 @@ def generate_questions_gpt35_turbo(text, num_questions, question_type, num_optio
         presence_penalty=0
     )
 
-    completion = client.chat.completions.create(
-    messages=[
-        {
-            "role": "user",
-            "content": "Can you generate an example json object describing a fruit?",
-        }
-    ],
-    model="gpt-3.5-turbo-1106",
-    response_format={"type": "json_object"},
-)
-    
 
     return response['choices'][0]['message']['content'].strip()
 
