@@ -35,8 +35,7 @@ def generate_questions_gpt35_turbo(text, num_questions, question_type, num_optio
         #messages=prompt,
         messages=[
             {
-                "role": "user",
-                "content": gpt_prompt,
+                prompt
             }
         ],
         temperature=0.5,
