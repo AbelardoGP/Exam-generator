@@ -30,7 +30,7 @@ def generate_questions_gpt35_turbo(text, num_questions, question_type, num_optio
         {"role": "assistant", "content": gpt_prompt},
     ]
 
-    response = openai.ChatCompletion.create(
+    response = openai.chat.completions.create(
         model="gpt-4",
         messages=prompt,
         temperature=0.5,
