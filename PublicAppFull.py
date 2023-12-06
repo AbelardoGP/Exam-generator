@@ -30,21 +30,15 @@ def generate_questions_gpt35_turbo(text, num_questions, question_type, num_optio
         {"role": "assistant", "content": gpt_prompt},
     ]
 
-    response = openai.chat.completions.create(
+    response = openai.ChatCompletion.create(
         model="gpt-4",
-        #messages=prompt,
-        messages=[
-            {
-                prompt
-            }
-        ],
+        messages=prompt,
         temperature=0.5,
         max_tokens=2000,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0
     )
-
 
     return response['choices'][0]['message']['content'].strip()
 
