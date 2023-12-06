@@ -32,13 +32,31 @@ def generate_questions_gpt35_turbo(text, num_questions, question_type, num_optio
 
     response = openai.chat.completions.create(
         model="gpt-4",
-        messages=prompt,
+        #messages=prompt,
+        messages=[
+            {
+                "role": "user",
+                "content": gpt_prompt,
+            }
+        ],
         temperature=0.5,
         max_tokens=2000,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0
     )
+
+    completion = client.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": "Can you generate an example json object describing a fruit?",
+        }
+    ],
+    model="gpt-3.5-turbo-1106",
+    response_format={"type": "json_object"},
+)
+    
 
     return response['choices'][0]['message']['content'].strip()
 
